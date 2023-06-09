@@ -28,7 +28,8 @@ class Movies():
                         'noviembre': '11', 'diciembre': '12'}
 
         if month.lower() in valid_months:
-            condition = self._df_movies['release_date'].dt.strftime('%m') == valid_months.get(month.lower())
+            variable = valid_months.get(month.lower())
+            condition = self._df_movies['release_date'].dt.strftime('%m') == variable
             return {'month': month, 'amount': self._df_movies[condition]["title"].count()}
 
         return {'message': f'Month not exists: {month}'}
@@ -85,7 +86,8 @@ class Movies():
         df_aux = self._df_movies['title'].str.lower()
         index = df_aux[df_aux == title.lower()].index
         if len(index.values) > 0:
-            df_aux = self._df_movies.iloc[index][['title', 'release_year', 'vote_count', 'vote_average']]
+            df_aux = self._df_movies.iloc[index][['title', 'release_year', 'vote_count',
+                                                  'vote_average']]
             if df_aux["vote_count"].values[0] >= 2000:
                 return {'title': df_aux["title"].values[0],
                         'year': df_aux["release_year"].values[0],
