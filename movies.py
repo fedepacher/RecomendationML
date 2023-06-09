@@ -30,7 +30,8 @@ class Movies():
         if month.lower() in valid_months:
             variable = valid_months.get(month.lower())
             condition = self._df_movies['release_date'].dt.strftime('%m') == variable
-            return {'month': month, 'amount': self._df_movies[condition]["title"].count()}
+            return {'month': month,
+                    'amount': f'{self._df_movies[condition]["title"].count()}'}
 
         return {'message': f'Month not exists: {month}'}
 
@@ -49,7 +50,7 @@ class Movies():
 
         if day.lower() in valid_days:
             condition = self._df_movies['release_date'].dt.dayofweek == valid_days.get(day.lower())
-            return {'day': day, 'amount': self._df_movies[condition]["title"].count()}
+            return {'day': day, 'amount': f'{self._df_movies[condition]["title"].count()}'}
 
         return {'message': f'Mes no existente: {day}'}
 
@@ -67,9 +68,9 @@ class Movies():
         index = df_aux[df_aux == title.lower()].index
         if len(index.values) > 0:
             df_aux = self._df_movies.iloc[index][['title', 'release_year', 'popularity']]
-            return {'title': df_aux["title"].values[0],
-                    'year': df_aux["release_year"].values[0],
-                    'popularity': df_aux["popularity"].values[0].round(1)}
+            return {'title': f'{df_aux["title"].values[0]}',
+                    'year': f'{df_aux["release_year"].values[0]}',
+                    'popularity': f'{df_aux["popularity"].values[0].round(1)}'}
 
         return {'message': f'Movie `{title}` not found'}
 
@@ -89,10 +90,10 @@ class Movies():
             df_aux = self._df_movies.iloc[index][['title', 'release_year', 'vote_count',
                                                   'vote_average']]
             if df_aux["vote_count"].values[0] >= 2000:
-                return {'title': df_aux["title"].values[0],
-                        'year': df_aux["release_year"].values[0],
-                        'total_votes': int(df_aux["vote_count"].values[0]),
-                        'average_votes': df_aux["vote_average"].values[0].round(1)}
+                return {'title': f'{df_aux["title"].values[0]}',
+                        'year': f'{df_aux["release_year"].values[0]}',
+                        'total_votes': f'{int(df_aux["vote_count"].values[0])}',
+                        'average_votes': f'{df_aux["vote_average"].values[0].round(1)}'}
 
             return {'message': f'Movie `{title}` has not enough votes'}
 
@@ -123,9 +124,9 @@ class Movies():
             max_value = max(return_list)
             index_max_return = index_list[return_list.index(max_value)]
             return {'actor': actor,
-                    'movie_count': movies_count,
-                    'max_return': self._df_movies.iloc[index_max_return]["return"].round(1),
-                    'average_return': ret_mean}
+                    'movie_count': f'{movies_count}',
+                    'max_return': f'{self._df_movies.iloc[index_max_return]["return"].round(1)}',
+                    'average_return': f'{ret_mean}'}
 
         return {'message': f'Actor `{actor}` not found'}
 
@@ -151,12 +152,12 @@ class Movies():
 
             index_var = index_list[ret_list.index(max_value)]
             return {'director': director,
-                    'max_return_title': self._df_movies.iloc[index_var]["title"],
-                    'max_return': self._df_movies.iloc[index_var]["return"].round(1),
-                    'movies': m_list,
-                    'year': d_list,
-                    'return_movie': ret_list,
-                    'budget_movie': c_list,
-                    'revenue_movie': rev_list}
+                    'max_return_title': f'{self._df_movies.iloc[index_var]["title"]}',
+                    'max_return': f'{self._df_movies.iloc[index_var]["return"].round(1)}',
+                    'movies': f'{m_list}',
+                    'year': f'{d_list}',
+                    'return_movie': f'{ret_list}',
+                    'budget_movie': f'{c_list}',
+                    'revenue_movie': f'{rev_list}'}
 
         return {'message': f'Director `{director}` not found'}
