@@ -14,10 +14,11 @@ This is a project for the **SoyHenry** academy.
 
 ## Repository content
 
-+ **etl.ipynb**: Content the ETL process for the `CSV` files and create a clean `CSV`.
-+ **movies.py**: Content the class to process api requests.
-+ **api.py**: Content the `GET` method to process server requests.
-+ **eda.ipynb**: Content the EDA process and recomendation system.
++ **etl.ipynb**: Contain the ETL process for the `CSV` files and create a clean `CSV`.
++ **movies.py**: Contain the class to process api requests.
++ **api.py**: Contain the `GET` method to process server requests.
++ **eda.ipynb**: Contain the EDA process and recomendation system.
++ **recommendation_system.py**: Contain the machine learning recomendation system.
 
 ## Workflow
 
@@ -45,4 +46,8 @@ To deploy the environment it has ussed the following [tutorial](https://github.c
 
 ## Exploratory data analysis
 
-For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/5) where you can find all the related information.<br>
+For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/6) where you can find all the related information.<br>
+
+## Recommendation system
+
+For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/7) where you can find all the related information.<br>
