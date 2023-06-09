@@ -12,6 +12,12 @@ the possible movie choices of the concerned user and their preferences towards a
 
 This is a project for the **SoyHenry** academy.
 
+## Repository content
+
++ **etl.ipynb**: Content the ETL process for the `CSV` files and create a clean `CSV`.
++ **movies.py**: Content the class to process api requests.
++ **api.py**: Content the `GET` method to process server requests.
++ **eda.ipynb**: Content the EDA process and recomendation system.
 
 ## Workflow
 
@@ -32,6 +38,11 @@ For this task it has created the following [issue](https://github.com/fedepacher
 
 For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/2) where you can find the description of the task to solve.<br>
 It has the following [issue](https://github.com/fedepacher/RecomendationML/issues/3) related.
+
 ## Deployment
 
 To deploy the environment it has ussed the following [tutorial](https://github.com/HX-FNegrete/render-fastapi-tutorial). The related issue can be found [here](https://github.com/fedepacher/RecomendationML/issues/4).
+
+## Exploratory data analysis
+
+For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/5) where you can find all the related information.<br>
