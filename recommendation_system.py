@@ -29,7 +29,7 @@ class Recommendation():
         Returns:
             str: Dictionary with the movies recommended.
         """
-        movie_index = self._df_movies[self._df_movies['title'].str.lower() == title].index.values
+        movie_index = self._df_movies[self._df_movies['title'].str.lower() == title.lower()].index.values
         if len(movie_index) > 0:
             similarity_scores = cosine_similarity(self._tfidf_matrix[movie_index],
                                                   self._tfidf_matrix)
