@@ -12,6 +12,13 @@ the possible movie choices of the concerned user and their preferences towards a
 
 This is a project for the **SoyHenry** academy.
 
+## Repository content
+
++ **etl.ipynb**: Contain the ETL process for the `CSV` files and create a clean `CSV`.
++ **movies.py**: Contain the class to process api requests.
++ **api.py**: Contain the `GET` method to process server requests.
++ **eda.ipynb**: Contain the EDA process and recomendation system.
++ **recommendation_system.py**: Contain the machine learning recomendation system.
 
 ## Workflow
 
@@ -32,6 +39,26 @@ For this task it has created the following [issue](https://github.com/fedepacher
 
 For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/2) where you can find the description of the task to solve.<br>
 It has the following [issue](https://github.com/fedepacher/RecomendationML/issues/3) related.
+
+## API Endpoints
+
++ `/cantidad_filmaciones_mes/{month}`: Get the amount of movies launched on month selected.
++ `/cantidad_filmaciones_dia{day}`: Get the amount of movies launched on day selected.
++ `/score_titulo/{title}`: Get the score of the title.
++ `/votos_titulo/{title}`: Get the votes of the title.
++ `/get_actor/{actor}`: Get the amount of movies starred by the actor, the return of the movies and average return of the movie.
++ `/get_director/{director}`: Get a list of movies of the director, the return, the budget and the revenues of each movie as a list.
++ `/recomendacion/{title}`: Get the top 5 movies recommended based on overviews, gendre and score of movies.
+
+
 ## Deployment
 
 To deploy the environment it has ussed the following [tutorial](https://github.com/HX-FNegrete/render-fastapi-tutorial). The related issue can be found [here](https://github.com/fedepacher/RecomendationML/issues/4).
+
+## Exploratory data analysis
+
+For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/6) where you can find all the related information.<br>
+
+## Recommendation system
+
+For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/7) where you can find all the related information.<br>
