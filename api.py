@@ -8,7 +8,7 @@ recomendation_obj = Recommendation()
 app = FastAPI()
 
 @app.get('/cantidad_filmaciones_mes/{month}')
-def get_count_movies_month(month: str):
+async def get_count_movies_month(month: str):
     """Get the amount of movies released in the requested month.
 
     Args:
@@ -21,7 +21,7 @@ def get_count_movies_month(month: str):
 
 
 @app.get('/cantidad_filmaciones_dia/{day}')
-def get_count_movies_day(day: str):
+async def get_count_movies_day(day: str):
     """Get the amount of movies released in the requested day.
 
     Args:
@@ -34,7 +34,7 @@ def get_count_movies_day(day: str):
 
 
 @app.get('/score_titulo/{title}')
-def get_score_title(title: str):
+async def get_score_title(title: str):
     """Get the released year and the score of the requested title.
 
     Args:
@@ -47,7 +47,7 @@ def get_score_title(title: str):
 
 
 @app.get('/votos_titulo/{title}')
-def get_votes_title(title: str):
+async def get_votes_title(title: str):
     """Get the released year, vote count and vote average of the requested title.
 
     Args:
@@ -60,7 +60,7 @@ def get_votes_title(title: str):
 
 
 @app.get('/get_actor/{actor}')
-def get_actor(actor: str):
+async def get_actor(actor: str):
     """Get the actor movies, themaximun return ans the average return.
 
     Args:
@@ -73,7 +73,7 @@ def get_actor(actor: str):
 
 
 @app.get('/get_director/{director}')
-def get_director(director: str):
+async def get_director(director: str):
     """Get all the movies, released year, return, revenue and budget of the requested director.
 
     Args:
@@ -86,7 +86,7 @@ def get_director(director: str):
 
 
 @app.get('/recomendacion/{title}')
-def get_recomendation(title: str):
+async def get_recomendation(title: str):
     """Get the recomendation accordint to requested title.
 
     Args:
