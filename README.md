@@ -33,32 +33,54 @@ The following image shows the workflow proposed for this project:<br>
 
 ## Data Engineering ETL
 
-For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/1) where you can find the description of the task to solve.
+For this task it has been created the following [issue](https://github.com/fedepacher/RecomendationML/issues/1) where you can find the description of the task to solve.
 
 ## API development
 
 For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/2) where you can find the description of the task to solve.<br>
-It has the following [issue](https://github.com/fedepacher/RecomendationML/issues/3) related.
+It has the following related [issue](https://github.com/fedepacher/RecomendationML/issues/3).
 
 ## API Endpoints
 
-+ `/cantidad_filmaciones_mes/{month}`: Get the amount of movies launched on month selected.
-+ `/cantidad_filmaciones_dia{day}`: Get the amount of movies launched on day selected.
-+ `/score_titulo/{title}`: Get the score of the title.
-+ `/votos_titulo/{title}`: Get the votes of the title.
+To access the endpoints you should use the following path:
+
+```
+https://moviesrecomendation.onrender.com/
+```
+
++ `/cantidad_filmaciones_mes/{month}`: Get the amount of movies released in the requested month.
++ `/cantidad_filmaciones_dia{day}`: Get the amount of movies released in the requested day.
++ `/score_titulo/{title}`: Get the released year and the score of the requested title.
++ `/votos_titulo/{title}`: Get the released year, vote count and vote average of the requested title.
 + `/get_actor/{actor}`: Get the amount of movies starred by the actor, the return of the movies and average return of the movie.
 + `/get_director/{director}`: Get a list of movies of the director, the return, the budget and the revenues of each movie as a list.
 + `/recomendacion/{title}`: Get the top 5 movies recommended based on overviews, gendre and score of movies.
 
+### Example:
+
+#### Recommendation
+```
+https://moviesrecomendation.onrender.com/recomendacion/The Empire Strikes Back
+```
+
+#### Movies launched in the selected day
+```
+https://moviesrecomendation.onrender.com/cantidad_filmaciones_dia/lunes
+```
+
+>Note: The endpoint are not key sensitive, that means that you can use lowercase or uppercase.
 
 ## Deployment
 
-To deploy the environment it has ussed the following [tutorial](https://github.com/HX-FNegrete/render-fastapi-tutorial). The related issue can be found [here](https://github.com/fedepacher/RecomendationML/issues/4).
+To deploy the environment it has used the following [tutorial](https://github.com/HX-FNegrete/render-fastapi-tutorial). The related issue can be found [here](https://github.com/fedepacher/RecomendationML/issues/4).
 
 ## Exploratory data analysis
 
-For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/6) where you can find all the related information.<br>
+For this task it has been created the following [issue](https://github.com/fedepacher/RecomendationML/issues/6) where you can find all the related information.<br>
 
 ## Recommendation system
 
-For this task it has created the following [issue](https://github.com/fedepacher/RecomendationML/issues/7) where you can find all the related information.<br>
+For this task it has been created the following [issue](https://github.com/fedepacher/RecomendationML/issues/7) where you can find all the related information.<br>
+You can access the server with the following link:
+
+
