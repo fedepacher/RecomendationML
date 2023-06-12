@@ -52,7 +52,7 @@ class Movies():
             condition = self._df_movies['release_date'].dt.dayofweek == valid_days.get(day.lower())
             return {'dia': day, 'cantidad': f'{self._df_movies[condition]["title"].count()}'}
 
-        return {'message': f'Mes no existente: {day}'}
+        return {'message': f'Dia no existente: {day}'}
 
 
     def get_score_title(self, title=''):
