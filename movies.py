@@ -22,16 +22,16 @@ class Movies():
         Returns:
             dict: Message with the information requested.
         """
-        valid_months = {'enero': '1', 'febrero': '2', 'marzo': '3', 'abril': '4',
-                        'mayo': '5', 'junio': '6', 'julio': '7', 'agosto': '8',
-                        'septiembre': '9', 'setiembre': '9', 'octubre': '10',
-                        'noviembre': '11', 'diciembre': '12'}
+        valid_months = {'enero': 1, 'febrero': 2, 'marzo': 3, 'abril': 4,
+                        'mayo': 5, 'junio': 6, 'julio': 7, 'agosto': 8,
+                        'septiembre': 9, 'setiembre': 9, 'octubre': 10,
+                        'noviembre': 11, 'diciembre': 12}
 
         if month.lower() in valid_months:
             variable = valid_months.get(month.lower())
-            condition = self._df_movies['release_date'].dt.strftime('%m') == variable
+            condition = self._df_movies['release_date'].dt.month == variable
             return {'mes': month,
-                    'cantidad': f'{self._df_movies[condition]["title"].count()}'}
+                    'cantidad': f'{self._df_movies[condition].shape[0]}'}
 
         return {'message': f'Month not exists: {month}'}
 
@@ -50,7 +50,7 @@ class Movies():
 
         if day.lower() in valid_days:
             condition = self._df_movies['release_date'].dt.dayofweek == valid_days.get(day.lower())
-            return {'dia': day, 'cantidad': f'{self._df_movies[condition]["title"].count()}'}
+            return {'dia': day, 'cantidad': f'{self._df_movies[condition].shape[0]}'}
 
         return {'message': f'Dia no existente: {day}'}
 
