@@ -29,14 +29,21 @@ class Recommendation():
         Returns:
             str: Dictionary with the movies recommended.
         """
-        movie_index = self._df_movies[self._df_movies['title'].str.lower() == title.lower()].index.values
+        title = title.lower()
+        movie_index = self._df_movies[self._df_movies['title'].str.lower() == title].index.values
         if len(movie_index) > 0:
             similarity_scores = cosine_similarity(self._tfidf_matrix[movie_index],
                                                   self._tfidf_matrix)
-            similar_movies_index = similarity_scores.argsort()[0][-5:][::-1]
+            similar_movies_index = similarity_scores.argsort()[0][-6:][::-1]
             similar_movies = self._df_movies.iloc[similar_movies_index][['title', 'vote_average']]
+            # Check that the same movie is not in the list, otherwise delete it
+            movie_index = similar_movies[similar_movies['title'].str.lower() == title].index.values
             similar_movies.sort_values(by='vote_average', ascending=False, inplace=True)
-            movie_list_str = '' 
+            if len(movie_index)  > 0:
+                similar_movies.drop(index=movie_index, inplace=True)
+            else:
+                similar_movies.drop(similar_movies.index[-1], inplace=True)
+            movie_list_str = ''
             for _, element in similar_movies.iterrows():
                 movie_list_str += element['title'] + ' ' + str(element['vote_average']) + '\r\n'
             return {'lista recomendada': movie_list_str}
